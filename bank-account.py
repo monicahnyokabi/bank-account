@@ -1,4 +1,8 @@
-  class BankAcount:
+from datetime import datetime
+time =  datetime.now()
+print(time)
+
+class BankAccount:
   
   
   def __init__(self, first_name, last_name,bank):
@@ -16,7 +20,13 @@
     return name
     
   def deposit(self, amount)
-      self.balance += amount
+      self.balance += amount  
+    try:
+            amount + 1
+        except TypeError:
+             print("Enter amount in figures")
+             return
+           
       if amount>0
         print(" you have deposited{} to your account".format(amount)
        else:
@@ -28,6 +38,12 @@
       
     
   def withdraw(self, amount):
+              try:
+            amount + 1
+        except TypeError:
+             print("Enter amount in figures")
+             return
+              
     if amount <= 0:
         print("Amount cannot be withdrawn")
 
@@ -43,11 +59,14 @@
     print ("Your Net Balance = {}".format(self.balance))   
     
   def withdrawal_statement(self):
-      withdrawals=withdrawals.append(withdraw())
-      return withdraw
+        for withdrawal in self.withdrawals:
+            print(withdrawal)
+            formated_time = time.strftime("%A, %drd %B %Y, %H:%M %p")
+            print("{} deposited on {}".format(deposit, formated_time))
+            return
   
-  def loan_given(self,amount):
-      print("You have received a loan of {}:".format(amount))
+  def loan_given(self,amount):for deposit in self.deposits:
+       print("You have received a loan of {}:".format(amount))
       self.loan= self.loan + amount
       
   def loan_repayed(self,amount):
